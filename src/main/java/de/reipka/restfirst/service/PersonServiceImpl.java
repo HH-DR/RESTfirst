@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonServiceImpl implements PersonService{
 
-//    PersonRepo personRepo;
 
     @Override
     public boolean createPerson(PersonRepo personRepo,String firstName, String lastName, Integer age) {

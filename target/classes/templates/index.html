@@ -7,7 +7,7 @@
     <title>Moin</title>
 </head>
 <body>
-<h1>Moin - Sie können hier Personen anlegen und anzeigen lassen.</h1>
+<h4>Moin - Sie können hier Personen anlegen und anzeigen lassen.</h4>
 
 
 
@@ -19,6 +19,17 @@
     <input type="text" th:name="lastName"/>
     <label>Alter</label>
     <input type="number" th:name="age"/>
+    <label>Senden</label>
+    <input type="submit"/>
+</form>
+
+<h5>Alle Personen anzeigen</h5>
+<button onclick="window.location.href='./person/all';">Alle anzeigen</button>
+
+<h5>Person nach Id löschen</h5>
+<form th:action="@{/person/delete}">
+
+    <input type="number" th:name="personId"/>
     <label>Senden</label>
     <input type="submit"/>
 </form>
