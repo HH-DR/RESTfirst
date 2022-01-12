@@ -9,5 +9,19 @@
 <body>
 <h1>Moin - Sie können hier Personen anlegen und anzeigen lassen.</h1>
 
+
+
+<h5>Person hinzufügen</h5>
+<form th:action="@{/person/add}">
+    <label>Vorname</label>
+    <input type="text" th:name="firstName"/>
+    <label>Nachname</label>
+    <input type="text" th:name="lastName"/>
+    <label>Alter</label>
+    <input type="number" th:name="age"/>
+    <label>Senden</label>
+    <input type="submit"/>
+</form>
+
 </body>
 </html>
