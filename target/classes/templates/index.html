@@ -23,16 +23,47 @@
     <input type="submit"/>
 </form>
 
-<h5>Alle Personen anzeigen</h5>
-<button onclick="window.location.href='./person/all';">Alle anzeigen</button>
-
 <h5>Person nach Id löschen</h5>
 <form th:action="@{/person/delete}">
 
     <input type="number" th:name="personId"/>
-    <label>Senden</label>
+    <label>Löschen</label>
     <input type="submit"/>
 </form>
+
+<h5>Alle Personen anzeigen</h5>
+<button onclick="window.location.href='./person/all';">Alle anzeigen</button>
+
+
+
+<br>
+<br>
+<hr>
+<script type="text/JavaScript">
+
+    function getList(){
+        let data = fetch(href='./person/all')
+                    .then(response => response.json())
+                    .then( response => JSON.stringify(response))
+        console.log(data);
+
+        let personList = JSON.stringify(data);
+        display_list.innerHTML= personList;
+    }
+
+    // .then(response => response.json())
+    //     .then(returnedJsonData => {
+    //
+    //         console.log(returnedJsonData);
+    //         createNewChart(returnedJsonData);
+
+</script>
+
+<button id ="refresh" onclick="getList()">Liste aktualisieren</button>
+<p> Alle Personen: <br><span id ="display_list"></span> </p>
+
+
+
 
 </body>
 </html>
